@@ -1,0 +1,65 @@
+<% layout("layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2 ">
+            <br>
+            <h3>Create New Listing</h3>
+            <form action="/listings" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" id="title" name="listing[title]" placeholder="Title" class="form-control" required>
+                        <div class="valid-feedback">
+                        Title Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                       Title Should Be Required
+                      </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" id="description" class="form-control"  placeholder="Description" required></textarea>
+                    <div class="invalid-feedback">
+                        Description Should Be Required
+                    </div>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" name="listing[image]" id="image" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Image  Should Be Required
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" name="listing[price]" id="price" class="form-control" placeholder="Price" required>
+                        <div class="invalid-feedback">
+                            Price Should Be Required
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 col-md-8">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" name="listing[location]" id="location" class="form-control" placeholder="Location" required>
+                        <div class="invalid-feedback">
+                           Location Should Be Required
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" name="listing[country]" id="country" class="form-control" placeholder="Country" required>
+                    <div class="invalid-feedback">
+                        Country Name Should Be Required
+                    </div>               
+                </div>
+                <br><br>
+                <input class="btn btn-dark add-btn" type="submit">
+                <br><br>
+            </form>
+        </div>
+    </div>
+</body>
